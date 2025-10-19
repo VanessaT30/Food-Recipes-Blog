@@ -53,23 +53,17 @@ body {
 
 #hero{
     /* position: relative; */
-    background: url('images/UnBlurred.svg') no-repeat center/cover;
+    background: url('images/Macaroons.svg') no-repeat center/cover;
     backdrop-filter: blur(3px);
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 7rem;
-    
-    /* padding-left: 6rem;
-    padding-right: 6rem; */
-    /* border-radius: 28px; */
-    /* padding: 7vh; */
-    
 }
 
 #hero-banner {
-    background: rgba(238, 238, 238, 0.8);
+    background: rgba(243, 220, 208, .8);
     backdrop-filter: blur(3px);
     padding: 2.5rem 3rem;
     border-radius: 20px;
@@ -80,44 +74,30 @@ body {
 #hero-banner h1 {
     font-family: 'Jacques Francois', serif;
     font-size: 2.2rem;
-    color: #2f1f1f;
+    color: rgba(109, 0, 0, 0.97);
     margin-bottom: 0.5rem;
     text-align: center;
 }
 
-#hero-banner h3 {
-    font-family: 'Crimson Text', serif;
-    font-size: 2rem;
-    color: #2f1f1f;
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
-
-#content{
-        background: rgba(255, 249, 243, 1);
-}
-
-#sweet-savoury{
-    /* padding: 4rem 3rem; */
-    /* background-color: #fffaf4; */
+#sweet-recipes{
     text-align: center;
     font-size: 2rem;
 }
 
-#sweet-savoury h2 {
+#sweet-recipes h2 {
     margin: 2rem;
 }
 
 #cards{
     padding: 3%;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
     gap: 2rem;
     font-family: 'Jacques Francois', serif;
     flex-wrap: wrap;
 }
 
-#sweet a, #savoury a{
+li a{
     /* background: rgba(254, 242, 205, 1); */
     background: rgba(255, 249, 243, 1);
     text-decoration: none;
@@ -128,8 +108,8 @@ body {
     box-shadow: 6px 10px 15px rgba(0, 0, 0, 0.1),
     -.2em 0 0.2em rgba(2, 0, 0, 0.1);
     transition: transform 0.5s ease, box-shadow 0.3s ease;
+    cursor: pointer;
     padding: 3rem;
-    caret-color: transparent;
 }
 
 #add {
@@ -138,7 +118,7 @@ body {
     padding: 2%;
 }
 
-#add a{
+#links a{
     background: rgba(224, 224, 255, 1);
     text-decoration: none;
     color: rgba(0, 0, 56, 1);
@@ -151,15 +131,18 @@ body {
     width: 15vw;
     text-align: center;
     align-items: center;
-    caret-color: transparent;
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
 a:hover {
-  background-color: rgb(183, 158, 231);
-  transform: translateY(-2px);
+    background-color: #f0e8d1;
+    transform: translateY(-2px);
 }
 
+#links a:hover {
+    background-color: rgb(183, 158, 231);
+    transform: translateY(-2px);
+}
 /* {
     background: rgba(255, 249, 243, 1);
     text-decoration: none;
