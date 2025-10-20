@@ -54,7 +54,7 @@ body {
 
 #hero{
     /* position: relative; */
-    background: url('images/pizza.svg') no-repeat center/cover;
+    background: url('../images/pizza.svg') no-repeat center/cover;
     backdrop-filter: blur(3px);
     height: 100%;
     display: flex;
