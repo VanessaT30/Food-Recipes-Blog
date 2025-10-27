@@ -70,10 +70,11 @@ button {
 }
 
 a {
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
+  font-family: 'Jacques Francois', serif;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
   font-weight: 500;
   transition: color 0.3s ease;
 } 
