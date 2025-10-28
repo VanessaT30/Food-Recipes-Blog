@@ -63,14 +63,22 @@ app.get("/sweet", (req, res) => {
     res.render(path.join(__dirname, "views", "sweet.ejs"));
 });
 
-app.get("/sweet/cheesecake", (req, res) => {
-    res.render(path.join(__dirname, "views", "cheesecake.ejs"));
-})
+// app.get("/sweet/cheesecake", (req, res) => {
+//     res.render(path.join(__dirname, "views", "cheesecake.ejs"));
+// })
 
 app.get("/sweet/:title", (req, res) => {
     let {title} = req.params;
+    console.log(req.params);
     const recipes = newRecipes.find(r => r.title === title);//whattt
-    res.render(path.join(__dirname, "views", `sweet/${title}.ejs`), { recipes });
+    
+    if (recipes) {
+        const type  = newRecipes.find(r => r.title === title);
+    }
+
+
+
+    res.render(path.join(__dirname, "views", `${title}`), { recipes, newRecipes });
 });
 
 
@@ -92,8 +100,8 @@ app.post("/submit-recipe",(req,res)=>{
 
 let newRecipes = [
     {
-    type: "Sweet",
-    title: "Cookies",
+    type: "sweet",
+    title: "cookies",
     ingredients:[
                 "225g all-purpose flour",
                 "1/2 tsp baking soda",
@@ -118,8 +126,8 @@ let newRecipes = [
                 ]
             },
             {
-    type: "Sweet",
-    title: "Cheesecake",
+    type: "sweet",
+    title: "cheesecake",
     ingredients:
             [
                 "200g digestive biscuits",
@@ -145,8 +153,8 @@ let newRecipes = [
             ]
         },
         {
-    type: "Sweet",
-    title: "Donuts",
+    type: "sweet",
+    title: "donuts",
     ingredients:
             [
                 "240ml warm milk",
@@ -175,8 +183,8 @@ let newRecipes = [
             ]
             },
             {
-    type: "Sweet",
-    title: "Ice-Cream",
+    type: "sweet",
+    title: "ice-Cream",
     ingredients:
             [
                 "500ml heavy cream",
