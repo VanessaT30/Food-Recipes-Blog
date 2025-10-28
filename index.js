@@ -50,7 +50,7 @@ app.set('views', path.join(__dirname, '/views')) // make sure were doing an abso
 
 app.get("/", (req, res) => {
     console.log("Hi there!");
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
     // res.render(path.join(__dirname, "views", "index.ejs"));
     // res.render(/views/index.ejs);
 });

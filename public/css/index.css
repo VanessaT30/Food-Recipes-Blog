@@ -54,12 +54,12 @@ body {
 #hero{
     /* position: relative; */
     background: url('/images/Ramen.svg') no-repeat center/cover;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(10px);
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 7rem;
+    /* padding: 7rem; */
     
     /* padding-left: 6rem;
     padding-right: 6rem; */
