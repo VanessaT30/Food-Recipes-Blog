@@ -51,6 +51,16 @@ app.set('views', path.join(__dirname, '/views')) // make sure were doing an abso
 app.get("/", (req, res) => {
     console.log("Hi there!");
     res.sendFile(path.join(__dirname, "index.html"));
+    
+    if (newRecipes.type === 'sweet') {
+    if (newRecipes) {
+    const title = newRecipes.map(r => r.title);
+    return res.render(path.join(__dirname, "views", "sweet.ejs"), 
+    { recipe:newRecipes, title});
+}
+res.send("No sweet recipes found.");
+    // res.sendFile(path.join(__dirname, "index.html"));
+};
     // res.render(path.join(__dirname, "views", "index.ejs"));
     // res.render(/views/index.ejs);
 });
@@ -60,7 +70,15 @@ app.get("/savoury", (req, res) => {
 });
 
 app.get("/sweet", (req, res) => {
-    res.render(path.join(__dirname, "views", "sweet.ejs"));
+    const sweetRecipes = newRecipes.filter(r => r.type === "sweet");
+if (newRecipes) {
+    const title = sweetRecipes.map(r => r.title);
+    return res.render(path.join(__dirname, "views", "sweet.ejs"), 
+    { recipe:sweetRecipes,
+    title});
+}
+res.send("No sweet recipes found.");
+    // res.sendFile(path.join(__dirname, "index.html"));
 });
 
 // app.get("/sweet/cheesecake", (req, res) => {
@@ -70,15 +88,17 @@ app.get("/sweet", (req, res) => {
 app.get("/sweet/:title", (req, res) => {
     let {title} = req.params;
     console.log(req.params);
-    const recipes = newRecipes.find(r => r.title === title);//whattt
+    const recipe = newRecipes.find(r => r.title === title);//whattt
+    console.log("recipe:", recipe);
     
-    if (recipes) {
-        const type  = newRecipes.find(r => r.title === title);
-    }
+    // if (recipes) {
+    //     const type  = newRecipes.find(r => r.title === title);
+    // }
 
+    // { if (r.title === recipes.title) {
+    // const { ingredients, instructions } = r;
 
-
-    res.render(path.join(__dirname, "views", `${title}`), { recipes, newRecipes });
+    res.render(path.join(__dirname, "views", `new-recipe.ejs`), { recipe, title });
 });
 
 
@@ -98,7 +118,37 @@ app.post("/submit-recipe",(req,res)=>{
 
 });
 
+//             <% recipe.ingredients.forEach(item => { %>
+//            <% }) %>
+
 let newRecipes = [
+        {
+    type: "savoury",
+    title: "pizza",
+    ingredients:[
+                "225g all-purpose flour",
+                "1/2 tsp baking soda",
+                "170g unsalted butter, melted",
+                "200g brown sugar",
+                "100g granulated sugar",
+                "1 tbsp vanilla extract",
+                "1 large egg + 1 egg yolk",
+                "300g chocolate chips" 
+                ],
+    instructions:
+                [
+                "Preheat the oven to 175°C (350°F).",
+                "In a bowl, whisk together the flour and baking soda.",
+                "In another bowl, mix the melted butter, brown sugar, and granulated sugar until well combined.",
+                "Add the vanilla extract, egg, and egg yolk to the butter-sugar mixture and mix well.",
+                "Gradually add the dry ingredients to the wet ingredients and mix until just combined.",
+                "Fold in the chocolate chips.",
+                "Drop spoonfuls of dough onto a baking sheet lined with parchment paper.",
+                "Bake for 10-12 minutes or until the edges are golden brown.",
+                "Let the cookies cool on the baking sheet for a few minutes before transferring to a wire rack to cool completely."
+                ]
+            },
+
     {
     type: "sweet",
     title: "cookies",
@@ -184,7 +234,7 @@ let newRecipes = [
             },
             {
     type: "sweet",
-    title: "ice-Cream",
+    title: "ice-cream",
     ingredients:
             [
                 "500ml heavy cream",

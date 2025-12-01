@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,44 +13,41 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jacques+Francois&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jacques+Francois&display=swap"
+        rel="stylesheet">
 
 </head>
-<body>
-    <% newRecipes.title %>
 
-    // { if (r.title === recipes.title) {for (const r of newRecipes) {
-        // const { ingredients, instructions } = r;
-    <% } %>
-    <h1>Chocolate Chip Cookies</h1>
-    <p>This is a classic chocolate chip cookie recipe.</p>
+<body>
+    <h1>
+        <%= recipe.title %>
+    </h1>
     <ul>
-        <li>Ingredients:
-            <ul>
-                <li>225g all-purpose flour</li>
-                <li>1/2 tsp baking soda</li>
-                <li>170g unsalted butter, melted</li>
-                <li>200g brown sugar</li>
-                <li>100g granulated sugar</li>
-                <li>1 tbsp vanilla extract</li>
-                <li>1 large egg + 1 egg yolk</li>
-                <li>300g chocolate chips</li>
-            </ul>
-        </li>
-        <br>
-        <li>Instructions:
-            <ol>
-                <li>Preheat the oven to 175°C (350°F).</li>
-                <li>In a bowl, whisk together the flour and baking soda.</li>
-                <li>In another bowl, mix the melted butter, brown sugar, and granulated sugar until well combined.</li>
-                <li>Add the vanilla extract, egg, and egg yolk to the butter-sugar mixture and mix well.</li>
-                <li>Gradually add the dry ingredients to the wet ingredients and mix until just combined.</li>
-                <li>Fold in the chocolate chips.</li>
-                <li>Drop spoonfuls of dough onto a baking sheet lined with parchment paper.</li>
-                <li>Bake for 10-12 minutes or until the edges are golden brown.</li>
-                <li>Let the cookies cool on the baking sheet for a few minutes before transferring to a wire rack to cool completely.</li>
-            </ol>
-        </li>
-    </ul>
+        <h2>Ingredients</h2>
+        <ul class="ingredients-list">
+            <% recipe.ingredients.forEach(function(ingredient) { %>
+                <li>
+                    <%= ingredient %>
+                </li>
+                <% }) %>
+        </ul>
+
+        <h2>Instructions</h2>
+        <ul class="instructions-list">
+            <% recipe.instructions.forEach(function(instruction) { %>
+                <li>
+                    <%= instruction %>
+                </li>
+                <% }) %>
+        </ul>
+
+        <div id="links">
+            <a href="/">Home</a>
+            <a href="/savoury">Savoury Food</a>
+            <a href="/sweet">Sweet Food</a>
+            <a href="add.html">Add a Recipe</a>
+        </div>
 </body>
+
 </html>

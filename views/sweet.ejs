@@ -27,10 +27,9 @@
     <div id="sweet-recipes">
         <h2>Explore our collection of sweet treats!</h2>
         <ul id="cards">
-            <li><a href="sweet/cheesecake">Cheese Cake</a></li>
-            <li><a href="sweet/cookies">Cookies</a></li>
-            <li><a href="recipe3.html">Donuts</a></li>
-            <li><a href="recipe3.html">Ice-Cream</a></li>
+            <% recipe.forEach(r => { %>
+            <li><a href="sweet/<%=title%>"><%=title%>"</a></li>
+              <% }) %>
         </ul>
 
     <div id="links">
@@ -41,3 +40,7 @@
     
 </body>
 </html>
+
+<!-- <li><a href="sweet/cookies">Cookies</a></li>
+            <li><a href="sweet/cookies">Donuts</a></li>
+            <li><a href="sweet/ice-cream">Ice-Cream</a></li> -->
