@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savoury recipes</title>
-        <link rel="stylesheet" href="/css/savoury.css">
+    <title>Sweet recipes</title>
+        
+    <link rel="stylesheet" href="/css/sweet.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,25 +17,30 @@
 
 </head>
 <body>
+    <div id="nav-bar">NAV BAR</div>
     <div id="hero">
         <div id="hero-banner">
-            <h1>Savoury Delights</h1>
+            <h1>Sweet Goodness</h1>
         </div>
     </div>
 
-    <div id="savoury-recipes">
-        <h2>Explore our collection of savoury recipes!</h2>
+    <div id="sweet-recipes">
+        <h2>Explore our collection of sweet treats!</h2>
         <ul id="cards">
-            <li><a href="recipe1.html">Tacos</a></li>
-            <li><a href="recipe2.html">Pizza</a></li>
-            <li><a href="recipe3.html">Ramen</a></li>
-            <li><a href="recipe3.html">Sushi</a></li>
+            <% recipe.forEach(r => { %>
+            <li><a href="sweet/<%=r.title%>"><%=r.title%></a></li>
+              <% }) %>
         </ul>
-        
+
     <div id="links">
         <a href="index.html">Home</a>
-        <a href="/sweet">Sweet Food</a>
+        <a href="/savoury">Savoury Food</a>
         <a href="add.html">Add a Recipe</a>
     </div>
+    
 </body>
 </html>
+
+<!-- <li><a href="sweet/cookies">Cookies</a></li>
+            <li><a href="sweet/cookies">Donuts</a></li>
+            <li><a href="sweet/ice-cream">Ice-Cream</a></li> -->
