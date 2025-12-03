@@ -120,9 +120,10 @@ li a{
 }
 
 #links a{
-    background: rgba(224, 224, 255, 1);
+    background: rgba(242, 224, 220, 1) 100%;
     text-decoration: none;
-    color: rgba(0, 0, 56, 1);
+  color: #5a3d2b;
+  font-weight: 600;
     padding: 1.5%;
     font-size: large;
     font-family: 'Crimson Text', serif;
@@ -136,12 +137,12 @@ li a{
 }
 
 a:hover {
-    background-color: #f0e8d1;
+    background-color: #dad7d0;
     transform: translateY(-2px);
 }
 
 #links a:hover {
-    background-color: rgb(183, 158, 231);
+    background-color: rgba(255, 249, 243, 1);
     transform: translateY(-2px);
 }
 /* {

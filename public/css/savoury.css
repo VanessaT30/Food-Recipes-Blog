@@ -80,12 +80,12 @@ body {
     text-align: center;
 }
 
-#savoury-recipes{
+#sweet-recipes{
     text-align: center;
     font-size: 2rem;
 }
 
-#savoury-recipes h2 {
+#sweet-recipes h2 {
     margin: 2rem;
 }
 
@@ -111,7 +111,6 @@ li a{
     transition: transform 0.5s ease, box-shadow 0.3s ease;
     cursor: pointer;
     padding: 3rem;
-    caret-color: transparent;
 }
 
 #add {
@@ -121,9 +120,10 @@ li a{
 }
 
 #links a{
-    background: rgba(224, 224, 255, 1);
+    background: rgba(242, 224, 220, 1) 100%;
     text-decoration: none;
-    color: rgba(0, 0, 56, 1);
+  color: #5a3d2b;
+  font-weight: 600;
     padding: 1.5%;
     font-size: large;
     font-family: 'Crimson Text', serif;
@@ -132,21 +132,19 @@ li a{
     width: 15vw;
     text-align: center;
     align-items: center;
-    caret-color: transparent;
     transition: background 0.3s ease, transform 0.2s ease;
+    
 }
 
 a:hover {
-    background-color: #f0e8d1;
+    background-color: #dad7d0;;
     transform: translateY(-2px);
 }
 
 #links a:hover {
-    background-color: rgb(183, 158, 231);
+    background-color: rgba(255, 249, 243, 1);
     transform: translateY(-2px);
 }
-
-
 /* {
     background: rgba(255, 249, 243, 1);
     text-decoration: none;

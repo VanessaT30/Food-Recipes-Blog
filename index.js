@@ -68,10 +68,10 @@ res.send("No sweet recipes found.");
 app.get("/savoury", (req, res) => {
     const savouryRecipes = newRecipes.filter(r => r.type === "savoury")
 
-    if (newRecipes) {
+    if (savouryRecipes.length > 0) {
         const title = savouryRecipes.map(r => r.title)
         return res.render(path.join(__dirname, "views", "savoury.ejs"),
-        {recipe:savouryRecipes, title});
+        {recipe:savouryRecipes});
     }
     res.send("No savoury recipes found.");
 });
@@ -81,8 +81,7 @@ app.get("/sweet", (req, res) => {
 if (newRecipes) {
     const title = sweetRecipes.map(r => r.title);
     return res.render(path.join(__dirname, "views", "sweet.ejs"),
-    { recipe:sweetRecipes,
-    title});
+    { recipe:sweetRecipes});
 }
 res.send("No sweet recipes found.");
     // res.sendFile(path.join(__dirname, "index.html"));
@@ -114,11 +113,13 @@ app.get("/savoury/:title", (req, res ) => {
     console.log(req.params);
     const recipe = newRecipes.map(r => r.title === title)
     console.log("recipe:", recipe);
+
     res.render(path.join(__dirname, "views", `new-recipe.ejs`), { recipe, title });
 })
 
 app.get("/add", (req, res) => {
     res.render(path.join(__dirname, "public", "add.html"));
+    // res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.post("/submit-recipe",(req,res)=>{

@@ -140,13 +140,15 @@ body {
 }
 
 #add a{
-    background: rgba(224, 224, 255, 1);
+    background: rgba(242, 224, 220, 1) 100%;
     text-decoration: none;
-    color: rgba(0, 0, 56, 1);
+    color: #5a3d2b;
+    font-weight: 600;
     padding: 1.5%;
     font-size: large;
     font-family: 'Crimson Text';
     border-radius: 10px;
+        box-shadow: 6px 10px 15px rgba(0, 0, 0, 0.2);
     /* box-shadow: 6px 10px 15px rgba(0, 0, 0, 0.1),
     -.2em 0 0.2em rgba(2, 0, 0, 0.1); */
     width: 15vw;
